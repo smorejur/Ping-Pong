@@ -12,6 +12,8 @@ let ballMoving;
 let border = 12;
 let score;
 let difficulty = 0;
+let abajo = document.getElementById("pong");
+let arriba = document.getElementById("ping");
 
 let gameStart = false;
 localStorage.setItem(storeScore, "null");
@@ -109,7 +111,10 @@ document.addEventListener('keydown', function (event) {
                     //para la aceleracion al dar con bar1
                     moveX = moveX < 0 ? moveX - (0.2 * difficulty) : moveX + (0.2 * difficulty);
                     moveY = moveY < 0 ? moveY - (0.2 * difficulty) : moveY + (0.2 * difficulty);
-                }
+                    arriba.play();
+                } else if ((ballY + ballDia) >= (window.innerHeight - bar2Height)) {
+                        abajo.play();
+                    }
 
                 if ((ballY + ballDia) >= (window.innerHeight - bar2Height)) {
                     moveY = -moveY;
@@ -124,6 +129,7 @@ document.addEventListener('keydown', function (event) {
 });
 
 function dataStoring(scoreObtained) {
+    
     if (score > highScore) {
         highScore = score;
         localStorage.setItem(storeScore, highScore);
