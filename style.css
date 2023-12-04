@@ -1,0 +1,41 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+body{
+    background-color: wheat;
+}
+#container{
+    position: relative;
+}
+#ball{
+    height: 30px;
+    width: 30px;
+    position: fixed;
+    border-radius: 50%;
+    background-color:orange;
+    left:60%;
+    top:20px;
+}
+#bar-1{
+    height: 5px;
+    display: flex;
+    justify-content: center;
+    width:100%;
+    background-color: seagreen;
+    border-radius: 10px;
+    position: fixed;
+    top:0%;
+    left:50%;
+}
+#bar-2{
+    height: 20px;
+    width:150px;
+    background-color: darkred;
+    border-radius: 25%;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    bottom: 1%;
+    left:50%;
+}
